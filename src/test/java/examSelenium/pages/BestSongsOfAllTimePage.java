@@ -13,15 +13,15 @@ public class BestSongsOfAllTimePage extends PageObject {
     @FindBy(className = "slide")
     private WebElementFacade list;
 
-    public boolean searchSong(String song){
-        for(int i=1;i<=50;i++)
+    public String searchSong(String song){
+        for(int i=50;i>=1;i--)
         {
-            String header = "header-slide-"+i;
-            String name = list.findElement(By.id("slide_"+i)).findElement(By.id(header)).getText();
-            if(name.equals(song))
-                return true;
+            String header = "header-slide-"+(50-i+1);
+            String name = find(By.id(header)).getText();
+            if(name.contains(song))
+                return "My song is on top 50 best songs of all time on number " + i;
         }
-        return false;
+        return "My song is not on top 50 best songs of all time";
     }
 
 

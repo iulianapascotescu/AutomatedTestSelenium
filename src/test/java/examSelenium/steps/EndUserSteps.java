@@ -20,10 +20,10 @@ public class EndUserSteps {
     }
 
     @Step
-    public void selectDate(){
-        birthdaySongPage.selectMonth();
-        birthdaySongPage.selectDay();
-        birthdaySongPage.selectYear();
+    public void selectDate(int day, int month, int year){
+        birthdaySongPage.selectMonth(month);
+        birthdaySongPage.selectDay(day);
+        birthdaySongPage.selectYear(year);
         birthdaySongPage.searchSong();
     }
 
@@ -38,14 +38,24 @@ public class EndUserSteps {
     }
 
     @Step
-    public boolean searchInList(String songName){
+    public String searchInList(String songName){
         return bestSongsOfAllTimePage.searchSong(songName);
     }
-
 
     @Step
     public void open_wikipedia_page() {
         wikipediaPage.open();
+    }
+
+    @Step
+    public void search_song(String song){
+        wikipediaPage.enter_song(song);
+        wikipediaPage.lookup_song();
+    }
+
+    @Step
+    public void accessLink(){
+        wikipediaPage.access_link();
     }
 
 }

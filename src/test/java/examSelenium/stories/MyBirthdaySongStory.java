@@ -32,8 +32,10 @@ public class MyBirthdaySongStory {
         // he retrieves his corresponding birthday song (full name)
         // ...
 
-        student.selectDate();
-        String songName = student.takeResultedSong();
+        student.selectDate(7, 12, 1999);
+        String result = student.takeResultedSong();
+        String name = result.split(" by ")[0];
+        String author = result.split(" by ")[1];
 
         // he open the article with the top 100 songs of all time
         student.open_best_songs_of_all_time_page();
@@ -41,13 +43,16 @@ public class MyBirthdaySongStory {
         // he checks if his songs is in the top (simply tries to match the full name)
         // and then prints the appropriate message in the console
         // ...
-        System.out.println(student.searchInList("1. ‘Imagine’ — John Lennon"));
+        String songName = "‘" + name + "‘ — " + author;
+        System.out.println(student.searchInList(songName));
 
         // he goes on Wikipedia
-        //student.open_wikipedia_page();
+        student.open_wikipedia_page();
 
-        // he searches for the song there aswell and opens the first result
+        // he searches for the song there as well and opens the first result
         // ...
+        student.search_song(songName);
+        student.accessLink();
 
         // keep the page open al little longer after the process is over
         waitForIt(SECONDS_TO_KEEP_PAGE_OPEN);

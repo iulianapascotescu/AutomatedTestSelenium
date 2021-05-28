@@ -25,16 +25,16 @@ public class BrithdaySongPage extends PageObject {
     @FindBy(id = "id01")
     private WebElementFacade songName;
 
-    public void selectMonth() {
-        monthElement.selectByValue("7");
+    public void selectMonth(int month) {
+        monthElement.selectByValue(String.valueOf(month));
     }
 
-    public void selectDay() {
-        dayElement.selectByValue("25");
+    public void selectDay(int day) {
+        dayElement.selectByValue(String.valueOf(day));
     }
 
-    public void selectYear() {
-        yearElement.selectByValue("1999");
+    public void selectYear(int year) {
+        yearElement.selectByValue(String.valueOf(year));
     }
 
     public void searchSong(){
