@@ -32,8 +32,8 @@ public class MyBirthdaySongStory {
         // he retrieves his corresponding birthday song (full name)
         // ...
 
-        student.selectDate(7, 12, 1999);
-        String result = student.takeResultedSong();
+        student.select_date(7, 12, 1999);
+        String result = student.take_resulted_song();
         String name = result.split(" by ")[0];
         String author = result.split(" by ")[1];
 
@@ -44,7 +44,7 @@ public class MyBirthdaySongStory {
         // and then prints the appropriate message in the console
         // ...
         String songName = "‘" + name + "‘ — " + author;
-        System.out.println(student.searchInList(songName));
+        System.out.println(student.search_in_list_of_best_songs(songName));
 
         // he goes on Wikipedia
         student.open_wikipedia_page();
@@ -52,7 +52,7 @@ public class MyBirthdaySongStory {
         // he searches for the song there as well and opens the first result
         // ...
         student.search_song(songName);
-        student.accessLink();
+        student.access_link();
 
         // keep the page open al little longer after the process is over
         waitForIt(SECONDS_TO_KEEP_PAGE_OPEN);

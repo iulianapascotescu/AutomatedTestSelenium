@@ -7,7 +7,6 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @DefaultUrl("https://en.wikipedia.org/wiki/Main_Page")
 public class WikipediaPage extends PageObject {
@@ -31,5 +30,4 @@ public class WikipediaPage extends PageObject {
         List<WebElementFacade> list = ul.thenFindAll(By.tagName("li"));
         list.get(0).then(By.className("mw-search-result-heading")).then(By.tagName("a")).click();
     }
-
 }

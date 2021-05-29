@@ -13,7 +13,7 @@ public class BestSongsOfAllTimePage extends PageObject {
     @FindBy(className = "slide")
     private WebElementFacade list;
 
-    public String searchSong(String song){
+    public String search_song_in_the_list_of_best_songs(String song){
         for(int i=50;i>=1;i--)
         {
             String header = "header-slide-"+(50-i+1);

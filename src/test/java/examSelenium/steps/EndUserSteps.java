@@ -20,16 +20,16 @@ public class EndUserSteps {
     }
 
     @Step
-    public void selectDate(int day, int month, int year){
-        birthdaySongPage.selectMonth(month);
-        birthdaySongPage.selectDay(day);
-        birthdaySongPage.selectYear(year);
-        birthdaySongPage.searchSong();
+    public void select_date(int day, int month, int year){
+        birthdaySongPage.select_month(month);
+        birthdaySongPage.select_day(day);
+        birthdaySongPage.select_year(year);
+        birthdaySongPage.search_song();
     }
 
     @Step
-    public String takeResultedSong() {
-        return birthdaySongPage.takeResult();
+    public String take_resulted_song() {
+        return birthdaySongPage.take_resulted_song_name();
     }
 
     @Step
@@ -38,8 +38,8 @@ public class EndUserSteps {
     }
 
     @Step
-    public String searchInList(String songName){
-        return bestSongsOfAllTimePage.searchSong(songName);
+    public String search_in_list_of_best_songs(String songName){
+        return bestSongsOfAllTimePage.search_song_in_the_list_of_best_songs(songName);
     }
 
     @Step
@@ -54,7 +54,7 @@ public class EndUserSteps {
     }
 
     @Step
-    public void accessLink(){
+    public void access_link(){
         wikipediaPage.access_link();
     }
 
